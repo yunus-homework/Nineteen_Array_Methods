@@ -22,11 +22,23 @@ alert(arr4["js"][0]);
 
 const arr5 = [];
 let str = "x";
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   arr5.push(str);
   str += "x";
 }
 console.log(arr5);
+
+function getX(item = 7) {
+  const arr = [];
+  let symbo = "x";
+  for (let i = 0; i < item; i++) {
+    arr.push(symbo);
+    symbo += symbo[0];
+  }
+  return arr;
+}
+
+console.log(getX());
 
 const arr6 = [];
 for (let i = 1; i < 10; i++) {
