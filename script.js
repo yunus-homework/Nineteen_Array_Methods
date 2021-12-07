@@ -71,6 +71,23 @@ function ten(arr) {
 }
 console.log(ten([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
+const arr10 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const reducer = arr10.reduce(
+  (acc, item) => {
+    if (acc.sum > 10) {
+      return acc;
+    }
+
+    acc.sum += item;
+    acc.result += 1;
+    return acc;
+  },
+  { sum: 0, result: 0 }
+).result;
+
+console.log(reducer);
+
 const arr7 = [1, 3, 4, 5, 6, 7];
 const results = [];
 for (let i = arr7.length - 1; i >= 0; i--) {
@@ -87,6 +104,23 @@ for (let i = 0; i < arr8.length; i++) {
 }
 
 console.log(total);
+
+const twoArrayConcat = arr8
+  .reduce((acc, item) => {
+    return acc.concat(item);
+  }, [])
+  .reduce((acc, item) => {
+    return (acc += item);
+  }, 0);
+
+console.log(twoArrayConcat);
+
+
+const twoArrayFlat = arr8.flat().reduce((acc, item) => {
+  return (acc += item);
+}, 0);
+
+console.log(twoArrayFlat);
 
 const arr9 = [
   [
